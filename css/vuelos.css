@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #ffffff;
+  }
+
+  .selection-header {
+    background-color: #000;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+  }
+
+  .selection-header .back-button {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .flight-info {
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .flight-info h2 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  .flight-info p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #555;
+  }
+
+  .lifemiles-info {
+    background-color: #f9f9f9;
+    color: #000;
+    border: 1px solid #00b300;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 5px;
+  }
+
+  .lifemiles-info .lifemiles-icon {
+    font-weight: bold;
+    color: #000;
+    font-size: 1.2rem;
+  }
+
+  .search {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #1c1c1c;
+    color: #fff;
+    border-top: 1px solid #444;
+  }
+
+  .search-item {
+    display: flex;
+    align-items: center;
+  }
+
+  .search-divider {
+    width: 1px;
+    background-color: #444;
+    margin: 0 10px;
+  }
+
+  .search-item i {
+    margin-right: 10px;
+    color: #999;
+  }
+
+  .search-item .fonti {
+    display: block;
+    font-size: 0.9rem;
+  }
+
+  .search-item strong {
+    font-weight: bold;
+    color: #fff;
+  }

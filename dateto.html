@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva</title>
+    <link rel="stylesheet" href="css/dateto.css">
+    <script src="js/dateto.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+</head>
+<body>
+
+    
+    <div class="calendar-container" style="width: 100%;">
+
+        <div class="headd">
+            <i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i>
+            <p>Fechas</p>
+            <i class="fa-solid fa-xmark" style="color: #ffffff;"></i>
+        </div>
+        
+       <div class="cl" style="width: 90%;">
+        <div class="input-container">
+            <label for="departure">Ida</label>
+            <input type="text" id="departure" placeholder="Selecciona una fecha de ida">
+          </div>
+          <div class="input-container">
+            <label for="return">Vuelta</label>
+            <input type="text" id="return" placeholder="Selecciona una fecha de vuelta">
+          </div>
+          
+          
+
+        <h3>¿Cuándo vas a volar?</h3>
+        <div class="calendar-header">
+            <button id="prevMonth">&#8249;</button>
+            <h2 id="monthYear">ENE 2025</h2>
+            <button id="nextMonth">&#8250;</button>
+        </div>
+        <div class="calendar-grid">
+            <div>Lu</div>
+            <div>Ma</div>
+            <div>Mi</div>
+            <div>Ju</div>
+            <div>Vi</div>
+            <div>Sa</div>
+            <div>Do</div>
+            <!-- Days will be dynamically populated -->
+        </div>
+       </div>
+    </div>
+
+</body>
+</html>

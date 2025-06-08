@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleccionar Pasajeros</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+           
+            
+        }
+
+        .passenger-container {
+            width: 100%;
+            background-color: #fff;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: gainsboro gainsboro green gainsboro;
+            padding: 4%;
+
+        }
+
+        .header span {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-left: 2%;
+        }
+
+        .passenger-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .passenger-item span {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .passenger-item .age-range {
+            font-size: 0.75rem;
+            color: #999;
+        }
+
+        .counter {
+            display: flex;
+            align-items: center;
+        }
+
+        .cb{
+            display: flex;
+            justify-content: center;
+        }
+
+        .counter button {
+            width: 30px;
+            height: 30px;
+            border: none;
+            border-radius: 50%;
+            background-color: #000;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .counter input {
+            width: 40px;
+            text-align: center;
+            border: none;
+            background: none;
+            font-size: 1rem;
+        }
+
+        .confirm-button {
+            width: 50%;
+            padding: 15px;
+            border: none;
+            border-radius: 50px;
+            background-color: #000;
+            color: #fff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .info {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.75rem;
+            color: #555;
+        }
+
+        .info a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .info a:hover {
+            text-decoration: underline;
+        }
+        .headd{
+    background-color: #1B1B1B;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2% 4% 4% 4%;
+    width: auto;
+
+}
+
+    </style>
+</head>
+<body >
+    
+   <div class="headd" style="background-color: black; width: 100%;" >
+            <i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i>
+            <p style="color: white; font-size:x-large;">Pasajeros</p>
+            <i class="fa-solid fa-xmark" style="color: #ffffff;"></i>
+    </div>
+
+    <section>
+ 
+    <div class="passenger-container" style="width: 97%;">
+
+        <div class="header">
+            <i class="fa-solid fa-user-plus"></i>
+            <span id="total-passengers">1</span>
+        </div>
+
+        <div class="passenger-item">
+            <div>
+                <span>Adultos</span>
+                <div class="age-range">Desde 15 años</div>
+            </div>
+            <div class="counter">
+                <button onclick="decrement('adults')">−</button>
+                <input type="text" id="adults" value="1" readonly>
+                <button onclick="increment('adults')">+</button>
+            </div>
+        </div>
+
+        <div class="passenger-item">
+            <div>
+                <span>Jóvenes</span>
+                <div class="age-range">De 12 a 14 años</div>
+            </div>
+            <div class="counter">
+                <button onclick="decrement('teens')">−</button>
+                <input type="text" id="teens" value="0" readonly>
+                <button onclick="increment('teens')">+</button>
+            </div>
+        </div>
+
+        <div class="passenger-item">
+            <div>
+                <span>Niños</span>
+                <div class="age-range">De 2 a 11 años</div>
+            </div>
+            <div class="counter">
+                <button onclick="decrement('children')">−</button>
+                <input type="text" id="children" value="0" readonly>
+                <button onclick="increment('children')">+</button>
+            </div>
+        </div>
+
+        <div class="passenger-item">
+            <div>
+                <span>Bebés</span>
+                <div class="age-range">Menores de 2 años</div>
+            </div>
+            <div class="counter">
+                <button onclick="decrement('babies')">−</button>
+                <input type="text" id="babies" value="0" readonly>
+                <button onclick="increment('babies')">+</button>
+            </div>
+        </div>
+
+        <div class="cb">
+            <button class="confirm-button" onclick="confirmSelection()">Confirmar</button>
+        </div>
+
+        <div class="info">
+            <a href="#">Conoce la política para jóvenes.</a>
+        </div>
+    </div>
+
+    <script>
+
+        
+        const updateTotalPassengers = () => {
+            const adults = parseInt(document.getElementById('adults').value, 10);
+            const teens = parseInt(document.getElementById('teens').value, 10);
+            const children = parseInt(document.getElementById('children').value, 10);
+            const babies = parseInt(document.getElementById('babies').value, 10);
+
+            const total = adults + teens + children + babies;
+            document.getElementById('total-passengers').textContent = total;
+        };
+
+        const increment = (type) => {
+            const input = document.getElementById(type);
+            let value = parseInt(input.value, 10);
+            input.value = value + 1;
+            updateTotalPassengers();
+        };
+
+        const decrement = (type) => {
+            const input = document.getElementById(type);
+            let value = parseInt(input.value, 10);
+            if (value > 0) {
+                input.value = value - 1;
+                updateTotalPassengers();
+            }
+        };
+
+        const confirmSelection = () => {
+            const adults = document.getElementById('adults').value;
+            const teens = document.getElementById('teens').value;
+            const children = document.getElementById('children').value;
+            const babies = document.getElementById('babies').value;
+
+            window.location.href = `carga.html`;
+        };
+    </script>
+     </section>
+
+    
+</body>
+</html>

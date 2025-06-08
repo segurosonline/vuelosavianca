@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+/* CSS */
+#tarjeta-container {
+    font-family: Arial, sans-serif;
+    width: 400px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #tarjeta-titulo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  #tarjeta-logos {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  #tarjeta-logos img {
+    height: 30px;
+  }
+  
+  .input-grupo {
+    margin-bottom: 15px;
+  }
+  
+  .input-label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .input-campo {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  #fecha-expiracion-container {
+    margin-bottom: 20px;
+  }
+  
+  #fecha-expiracion-grupo {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .input-select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: calc(33.33% - 10px);
+  }
+  
+  #cvv-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  #cvv {
+    flex: 1;
+  }
+  
+  #info-icono {
+    font-size: 18px;
+    color: #666;
+  }
+  
+  .opcion-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+  
+  .opcion-toggle label {
+    font-size: 14px;
+  }
+  
+  .opcion-toggle input {
+    transform: scale(1.2);
+  }
+  
+
+
+.idc{
+    border-style: solid;
+    border-width: 3px 0px 0px 0px;
+    border-color: green;
+    background-color: white;
+
+}
+
+.nn{
+    margin: 0% 5% 0% 5%;
+    padding-bottom: 8%;
+}
+
+.dat{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    
+}
+
+.dat input{
+    border-style: solid;
+    padding: 8%;
+    border-radius: 5px;
+    border-color: gainsboro;
+    border-width: 1px;
+    width: 100%;
+    font-size: 116%;
+}
+
+input:focus{
+    outline: none;
+}
+
+.butt{
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10%;
+}

